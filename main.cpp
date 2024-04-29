@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 
 float calcular_nota(float custo, float lucro, float imposto) {
 	float valor = custo + lucro;
@@ -13,21 +14,34 @@ int main(int argc, char** argv) {
 	
 	float custo, lucro, imposto, valor_final;
 	
+	// coletar os dados
 	do {
-		printf("Digite o custo: R$");
+		printf("\nDigite o custo: R$");
 		scanf("%f", &custo);
 	} while (custo < 0);
 	
 	do {
-		printf("Digite o lucro desejado: R$");
+		system("cls");
+		printf("\nCusto Objtido: R$ %.2f", custo);
+		printf("\nDigite o lucro desejado: R$");
 		scanf("%f", &lucro);
 	} while (lucro < 0);
 	
 	do {
-		printf("Digite o total de imposto em %: ");
+		system("cls");
+		printf("\nCusto Obtido: R$ %.2f", custo);
+		printf("\nLucro Desejado: R$ %.2f", lucro);
+		printf("\nDigite o total de imposto em %: ");
 		scanf("%f", &imposto);
 	} while (imposto < 0);
 	
+	// apresentar os dados
+	system("cls");
+	printf("\nCusto Obtido: R$ %.2f", custo);
+	printf("\nLucro Desejado: R$ %.2f", lucro);
+	printf("\nTotal de Imposto em %: ", imposto);
+	
+	// calcular o valor da nota
 	valor_final = calcular_nota(custo, lucro, imposto);
 	
 	printf("\nValor a cobrar: R$ %.2f", valor_final);
